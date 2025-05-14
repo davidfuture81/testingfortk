@@ -30,6 +30,10 @@
       color: #10a37f;
     }
 
+    p {
+      font-size: 1.5em;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -51,9 +55,7 @@
   <main>
     <section>
       <h2>What is ChatGPT?</h2>
-      <p>
-        ChatGPT is a powerful AI language model developed by OpenAI. It's designed to generate human-like text based on the input it receives. It can help with writing, coding, learning, brainstorming, and much more.
-      </p>
+      <p></p>
     </section>
 
     <section>
@@ -77,5 +79,24 @@
   <footer>
     &copy; 2025 ChatGPT Info Page. Not affiliated with OpenAI.
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const typewriterText = "ChatGPT is a powerful AI language model developed by OpenAI. It's designed to generate human-like text based on the input it receives. It can help with writing, coding, learning, brainstorming, and much more.";
+      const typewriterElement = document.querySelector('section:nth-of-type(1) p');
+      let index = 0;
+
+      function typeEffect() {
+        if (index < typewriterText.length) {
+          typewriterElement.textContent += typewriterText.charAt(index);
+          index++;
+          setTimeout(typeEffect, 50);
+        }
+      }
+
+      typewriterElement.textContent = ""; // Clear initial text
+      typeEffect();
+    });
+  </script>
 </body>
 </html>
